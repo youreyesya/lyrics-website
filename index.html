@@ -55,18 +55,17 @@ width:100%;
 <div class="title">Risk It All - Bruno Mars</div>
 
 <div class="content">
+
 <p id="text">I would swim</p>
 
 <button onclick="nextText()">OK</button>
 
-<!-- Audio Lagu -->
-<audio id="song" controls>
+<audio id="song" autoplay controls>
 <source src="riskitall.mp3" type="audio/mpeg">
 Browser kamu tidak mendukung audio.
 </audio>
 
 </div>
-
 </div>
 
 <script>
@@ -85,11 +84,26 @@ let lyrics = [
 let i = 0;
 
 function nextText(){
+
+// memutar lagu jika belum play (membantu bypass blok autoplay)
+let song = document.getElementById("song");
+if(song.paused){
+song.play();
+}
+
 i++;
+
 if(i < lyrics.length){
 document.getElementById("text").innerText = lyrics[i];
 }
+
 }
+
+// mencoba autoplay saat halaman selesai load
+window.onload = function(){
+let song = document.getElementById("song");
+song.play().catch(()=>{});
+};
 
 </script>
 
