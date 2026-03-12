@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Risk It All - Bruno Mars</title>
+
+<style>
+
+body{
+background-image:url("https://i.imgur.com/PnHJ7bx.jpeg");
+background-size:cover;
+background-position:center;
+font-family:Tahoma;
+}
+
+.window{
+width:320px;
+background:#ECE9D8;
+border:2px solid black;
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+padding:10px;
+box-shadow:5px 5px 0px #555;
+}
+
+.title{
+background:#000080;
+color:white;
+padding:5px;
+font-weight:bold;
+}
+
+.content{
+text-align:center;
+padding:20px;
+}
+
+button{
+padding:5px 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="window">
+<div class="title">Risk It All - Bruno Mars</div>
+
+<div class="content">
+<p id="text">I would swim</p>
+<button onclick="nextText()">OK</button>
+</div>
+
+</div>
+
+<script>
+
+let lyrics = [
+"I would swim",
+"Across the sea",
+"Just to show you",
+"SACRIFICE MY LIFE",
+"JUST TO HOLD YOU",
+"I could go on and on",
+"To prove that you belong",
+"HERE IN MY ARMSSS…."
+];
+
+let i = 0;
+
+function nextText(){
+i++;
+if(i < lyrics.length){
+document.getElementById("text").innerText = lyrics[i];
+}
+}
+
+</script>
+
+</body>
+</html>
