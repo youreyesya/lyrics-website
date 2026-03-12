@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Risk It All - Bruno Mars</title>
 
 <style>
 
 body{
-background-image:url("https://i.imgur.com/PnHJ7bx.jpeg");
+background-image:url("background.jpg");
 background-size:cover;
 background-position:center;
+background-repeat:no-repeat;
 font-family:Tahoma;
+margin:0;
+height:100vh;
 }
 
 .window{
@@ -38,7 +44,7 @@ padding:20px;
 
 button{
 padding:5px 20px;
-margin:10px;
+margin-top:10px;
 }
 
 audio{
@@ -52,7 +58,10 @@ width:100%;
 <body>
 
 <div class="window">
-<div class="title">Risk It All - Bruno Mars</div>
+
+<div class="title">
+Risk It All - Bruno Mars
+</div>
 
 <div class="content">
 
@@ -62,10 +71,10 @@ width:100%;
 
 <audio id="song" autoplay controls>
 <source src="riskitall.mp3" type="audio/mpeg">
-Browser kamu tidak mendukung audio.
 </audio>
 
 </div>
+
 </div>
 
 <script>
@@ -85,8 +94,8 @@ let i = 0;
 
 function nextText(){
 
-// memutar lagu jika belum play (membantu bypass blok autoplay)
 let song = document.getElementById("song");
+
 if(song.paused){
 song.play();
 }
@@ -99,7 +108,6 @@ document.getElementById("text").innerText = lyrics[i];
 
 }
 
-// mencoba autoplay saat halaman selesai load
 window.onload = function(){
 let song = document.getElementById("song");
 song.play().catch(()=>{});
